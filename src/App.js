@@ -1,5 +1,6 @@
 
 import './App.css';
+import ItemListContainer from './components/ItemListContainer';
 import Navbar from './components/Navbar';
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
     <div className="App">
       
       <Navbar></Navbar>
+      <ItemListContainer greeting="Hola Mundo ItemListContainer" />
     </div>
   );
 }
