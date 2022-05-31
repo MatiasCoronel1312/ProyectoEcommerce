@@ -1,28 +1,30 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import promise from '../Utils/promise';
-import ItemList from './ItemList';
+import ItemDetail from './ItemDetail'
+
 
 const { products }  = require ('../Utils/products');
 
 
-const ItemListContainer = ({greeting}) => {
+const ItemDetailContainer = ({greeting}) => {
     
-    const [productos, setProductos] = useState ({});
+    const [producto, setProducto] = useState ({});
 
     useEffect (() => {
-        promise(2000, products)
-            .then(result => setProductos(result))
+        promise(2000, products[5])
+            .then(result => setProducto(result))
             .catch(err => console.log(err))
     }, []);
+
     return (
         <>
             <div className='h2 p-1'>{greeting}</div>
-            <ItemList items={productos} />
+            <ItemDetail item={producto} />
             
         </>
         
     );
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;
