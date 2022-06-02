@@ -29,6 +29,9 @@ h1 {
 
 .navbar {
   background-color: rgb(0, 0, 0);
+  width: 100%;
+  position: sticky;
+  top: 0;
 }
 
 .navbar_menu{
