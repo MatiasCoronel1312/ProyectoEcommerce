@@ -1,5 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import promise from '../Utils/promise';
 import ItemDetail from './ItemDetail'
 
@@ -10,16 +11,17 @@ const { products }  = require ('../Utils/products');
 const ItemDetailContainer = ({greeting}) => {
     
     const [producto, setProducto] = useState ({});
+    const { id } = useParams ();
 
     useEffect (() => {
-        promise(2000, products[5])
+        promise(2000, products.find ( item => item.id === parseInt (id)))
             .then(result => setProducto(result))
             .catch(err => console.log(err))
     }, []);
 
     return (
         <>
-            <div className='h2 p-1'>{greeting}</div>
+            <div className='Subtitulo'>{greeting}</div>
             <ItemDetail item={producto} />
             
         </>

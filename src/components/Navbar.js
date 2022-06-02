@@ -1,27 +1,25 @@
-import './../css/navbar.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from './CartWidget';
+import {Link} from 'react-router-dom'
 
 
 const Navbar = () => {
     return (
 
-        <nav className="navbar navbar-expand-md navbar-light bg-primary">
-            <div className="container-fluid">
-                <a className="navbar-brand h1" href="./">Tiendita Online</a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-label="Toggle navigation">MENU
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div id="navbarText" className=" collapse navbar-collapse container-fluid">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
-                        <li className="nav-item"><a className="nav-link " aria-current="page" href="./">Inicio</a> </li>
-                        <li className="nav-item"><a className="nav-link " href="./">Productos</a> </li>
-                        <li className="nav-item"><a className="nav-link " href="./">Ofertas</a> </li>
-                        <li className="nav-item"><a className="nav-link " href="./">Categorias</a> </li>
-                        <li className="nav-item"><a className="nav-link " href="./">Nosotros</a> </li>
+        <nav className="navbar">
+            <div className="navbar_menu">
+                <div>
+                    <h1><Link className='navbar_menu__titulo' to='/'>Tiendita Office</Link></h1>
+                </div>
+                <div>
+                    <ul className="navbar_navegador">
+                        <li><Link className='navbar_navegador__item' to='/category/1'>Funkos Pop</Link> </li>
+                        <li><Link className='navbar_navegador__item' to='/category/2'>Remeras</Link> </li>
+                        <li><Link className='navbar_navegador__item' to='/category/4'>Tazas</Link> </li>
+                        <li><Link className='navbar_navegador__item' to='/category/5'>Cuadros</Link> </li>
+                        <li><Link className='navbar_navegador__item' to='/category/6'>Miscelaneos</Link> </li>
                     </ul>
                 </div>
-                <div className='p-4'>
+                <div className='cartWidget'>
                     <CartWidget/>
                 </div>
             </div>
