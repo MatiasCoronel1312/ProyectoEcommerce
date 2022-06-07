@@ -1,8 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const ItemCount = ({ stock = 5, initial = 1 }) => { //el stock esta hardcoreado a 5, por ahora
-    const [contador, setContador] = useState(1);
+const ItemCount = ({ stock=0, initial = 1, onAdd }) => { 
+    const [contador, setContador] = useState(0);
+
+    useEffect(() => {
+        setContador (initial);
+    },[initial]);
 
 
     const incremento = () => {
@@ -31,6 +35,7 @@ const ItemCount = ({ stock = 5, initial = 1 }) => { //el stock esta hardcoreado 
                             <div className='p-3'>
                                 <button type="button" className="btn btn-primary" onClick={decremento}>-</button>
                             </div>
+                            <button type="button" className="btn btn-outline-primary p-3" onClick={() => onAdd(contador)}>agregar al carrito</button>
 
                         </div>
                     
