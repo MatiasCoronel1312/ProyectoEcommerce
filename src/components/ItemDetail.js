@@ -8,9 +8,8 @@ const ItemDetail = ({item}) => {
 
     const onAdd = (qty) => {
 
-        alert("You have selected " + qty + " items.");
         setItemCount(qty);
-        console.log(qty);
+        // console.log(qty);
     }
 
     return (
@@ -19,7 +18,7 @@ const ItemDetail = ({item}) => {
         {
             item.image
             ? 
-            <div className="container p-5">
+            <div className="container p-5 text-center">
                 <h3 >{item.name}</h3>
                 <div className="row align-items-center">
                     <div className="col-6 p-3"><img src={item.image[0]} alt="imagen"></img> </div>
@@ -29,16 +28,20 @@ const ItemDetail = ({item}) => {
                     
                 </div>
                 <div className='p_3'>
-                {
+                    {
                         itemCount === 0
-                        ? <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
-                        : <Link to='/cart'> <button className="btn btn-outline-primary p-3">Ver Compras</button></Link>
+                        ? <ItemCount stock={item.stock}  onAdd={onAdd} />
+                        : <>
+                                <h4>Agregó {itemCount} productos</h4>
+                                <Link to='/cart'> <button className="btn btn-outline-primary p-3">Ver Compras</button></Link>
+                                <Link to='/'> <button className="btn btn-outline-primary p-3">Volver</button></Link>
+                        </>
                     }
                         
                         
                 </div>
             </div>
-            :  <div className="spinner-border" role="status">
+            :  <div className="spinner-border p-5" role="status">
                     <span className="visually-hidden">Cargando...</span>
                 </div>
         }

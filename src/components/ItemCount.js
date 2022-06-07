@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const ItemCount = ({ stock=0, initial = 1, onAdd }) => { 
     const [contador, setContador] = useState(0);
@@ -35,10 +36,15 @@ const ItemCount = ({ stock=0, initial = 1, onAdd }) => {
                             <div className='p-3'>
                                 <button type="button" className="btn btn-primary" onClick={decremento}>-</button>
                             </div>
-                            <button type="button" className="btn btn-outline-primary p-3" onClick={() => onAdd(contador)}>agregar al carrito</button>
+                            
 
                         </div>
-                    
+                        <div className='d-flex justify-content-center p-2'>
+                            <div className='p-3'>
+                                <button type="button" className="btn btn-outline-primary p-3" onClick={() => onAdd(contador)}>agregar al carrito</button>
+                            </div>
+                            <Link className='p-3' to='/'> <button className="btn btn-outline-primary p-3">Volver</button></Link>
+                        </div>
         </>
     );
 }

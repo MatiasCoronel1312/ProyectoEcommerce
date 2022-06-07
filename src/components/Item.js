@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
-import ItemCount from "./ItemCount"
+
 
 
 const Item = ({id, title, stock, price, pictureUrl }) => {
@@ -12,10 +12,8 @@ const Item = ({id, title, stock, price, pictureUrl }) => {
                     <div>$ {price}</div>
                     <div>{stock} unid.</div>
                     <p className="card-text"><Link to= {`/item/${id}`}>Detalle del Articulo</Link></p>
-                    <ItemCount/>
-                    <div className='p_3'>
-                        <button type="button" className="btn btn-outline-primary p-3" >agregar al carrito</button>
-                    </div>
+                    
+                    
                 </div>
         </div>
     );
