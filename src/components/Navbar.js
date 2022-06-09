@@ -20,7 +20,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className='cartWidget'>
-                    <CartWidget/>
+                    <Link to='/cart'><CartWidget/></Link>
                 </div>
             </div>
         </nav>
