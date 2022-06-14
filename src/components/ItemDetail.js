@@ -30,14 +30,14 @@ const ItemDetail = ({item}) => {
                     <div className="col-6">Stock: {item.stock} </div>
                     
                 </div>
-                <div className='p_3'>
+                <div className='p-3'>
                     {
                         itemCount === 0
                         ? <ItemCount stock={item.stock}  onAdd={onAdd} />
                         : <>
                                 <h4>Agregó {itemCount} productos</h4>
-                                <Link to='/cart'> <button className="btn btn-outline-primary p-3">Ver Compras</button></Link>
-                                <Link to='/'> <button className="btn btn-outline-primary p-3">Volver</button></Link>
+                                <Link to='/cart'> <button className="btn btn-outline-dark p-3 m-2">Ver Compras</button></Link>
+                                <Link to='/'> <button className="btn btn-outline-dark p-3 m-2">Volver a comprar</button></Link>
                         </>
                     }
                         

@@ -13,7 +13,7 @@ const ItemListContainer = ({greeting}) => {
     const { id } = useParams ();
 
     useEffect (() => {
-        promise(2000,  products.filter(item => { if(id === undefined) return item ; return item.category === parseInt(id)}))
+        promise(1000,  products.filter(item => { if(id === undefined) return item ; return item.category === parseInt(id)}))
             .then(result => setProductos(result))
             .catch(err => console.log(err))
     }, [id]);

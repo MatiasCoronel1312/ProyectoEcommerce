@@ -28,22 +28,22 @@ const ItemCount = ({ stock=0, initial = 1, onAdd }) => {
                         <div className='d-flex justify-content-center p-2'>
 
                             <div className='p-3'>
-                                <button type="button" className="btn btn-primary" onClick={incremento}>+</button>
+                                <button type="button" className="btn btn-dark" onClick={incremento}>+</button>
                             </div>
                             <div className='p-4'>
                                 <p>{contador}</p>
                             </div>
                             <div className='p-3'>
-                                <button type="button" className="btn btn-primary" onClick={decremento}>-</button>
+                                <button type="button" className="btn btn-dark" onClick={decremento}>-</button>
                             </div>
                             
 
                         </div>
                         <div className='d-flex justify-content-center p-2'>
                             <div className='p-3'>
-                                <button type="button" className="btn btn-outline-primary p-3" onClick={() => onAdd(contador)}>agregar al carrito</button>
+                                <button type="button" className="btn btn-outline-dark p-3" onClick={() => onAdd(contador)}>agregar al carrito</button>
                             </div>
-                            <Link className='p-3' to='/'> <button className="btn btn-outline-primary p-3">Volver</button></Link>
+                            <Link className='p-3' to='/'> <button className="btn btn-outline-dark p-3">Volver</button></Link>
                         </div>
         </>
     );

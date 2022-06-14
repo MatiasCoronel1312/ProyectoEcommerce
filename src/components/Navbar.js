@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 const Navbar = () => {
     return (
 
-        <nav className="navbar">
+        <nav className="navbar fixed-top">
             <div className="navbar_menu">
                 <div>
                     <h1><Link className='navbar_menu__titulo' to='/'>Tiendita Office</Link></h1>

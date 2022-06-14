@@ -11,7 +11,7 @@ const ItemDetailContainer = ({greeting}) => {
     const { id } = useParams ();
 
     useEffect (() => {
-        promise(2000, products.find ( item => item.id === parseInt (id)))
+        promise(1000, products.find ( item => item.id === parseInt (id)))
             .then(result => setProducto(result))
             .catch(err => console.log(err))
     }, [id]);
