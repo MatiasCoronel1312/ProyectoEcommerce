@@ -1,22 +1,29 @@
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import promise from '../Utils/promise';
+import {firestoreFetch} from '../Utils/firestoreFetch';
 import ItemList from './ItemList';
 
-const { products }  = require ('../Utils/products');
+
 
 
 const ItemListContainer = ({greeting}) => {
     
-    const [productos, setProductos] = useState ({});
-    const { id } = useParams ();
+    const [productos, setProductos] = useState ([]);
+    const { category } = useParams ();
 
     useEffect (() => {
-        promise(1000,  products.filter(item => { if(id === undefined) return item ; return item.category === parseInt(id)}))
-            .then(result => setProductos(result))
-            .catch(err => console.log(err))
-    }, [id]);
+        firestoreFetch(category)
+        .then(res => setProductos(res))
+        .catch(err => console.log(err));
+        
+    }, [category]);
+
+    useEffect(() => {
+        return (() => {
+            setProductos([]);
+        })
+    }, []);
     
     return (
         <>

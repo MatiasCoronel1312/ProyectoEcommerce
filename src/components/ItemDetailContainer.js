@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import promise from '../Utils/promise';
+import { firestoreFetchOne } from '../Utils/firestoreFetch';
 import ItemDetail from './ItemDetail'
 
-const { products }  = require ('../Utils/products');
+
 
 const ItemDetailContainer = ({greeting}) => {
     
@@ -11,7 +11,7 @@ const ItemDetailContainer = ({greeting}) => {
     const { id } = useParams ();
 
     useEffect (() => {
-        promise(1000, products.find ( item => item.id === parseInt (id)))
+        firestoreFetchOne(id)
             .then(result => setProducto(result))
             .catch(err => console.log(err))
     }, [id]);

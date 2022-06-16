@@ -14,12 +14,13 @@ const CartContextProvider = ({children}) => {
             {
                 key: item.id,
                 id: item.id,
-                img: item.image[0],
+                img: item.image,
                 name: item.name,
                 cost: item.cost,
                 quantityItem: quantity
             }])
-        : confirmar.quantityItem += quantity
+        : confirmar.quantityItem += quantity;
+        
 
     }
 

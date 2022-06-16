@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const Item = ({id, title, stock, price, pictureUrl }) => {
+const Item = ({id, title, stock, price, pictureUrl}) => {
     return (
         <div className="card container-fluid p-2 col-3 m-1" >
                 <img src={pictureUrl} className="card-img-top h-auto" alt="imagen" />

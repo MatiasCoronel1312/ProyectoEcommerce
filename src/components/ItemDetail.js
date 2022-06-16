@@ -24,7 +24,7 @@ const ItemDetail = ({item}) => {
             <div className="container p-5 text-center">
                 <h3 >{item.name}</h3>
                 <div className="row align-items-center">
-                    <div className="col-6 p-3"><img src={item.image[0]} alt="imagen"></img> </div>
+                    <div className="col-6 p-3"><img src={item.image} alt="imagen"></img> </div>
                     <p className="col-6 p-5">{item.description}</p>
                     <div className="col-6">Precio $ {item.cost}</div>                
                     <div className="col-6">Stock: {item.stock} </div>
