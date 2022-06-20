@@ -14,14 +14,18 @@ const ItemListContainer = ({greeting}) => {
 
     useEffect (() => {
         firestoreFetch(category)
+        
         .then(res => setProductos(res))
         .catch(err => console.log(err));
         
+        
     }, [category]);
+    
 
     useEffect(() => {
         return (() => {
             setProductos([]);
+            
         })
     }, []);
     

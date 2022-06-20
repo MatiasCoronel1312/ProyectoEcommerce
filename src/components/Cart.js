@@ -2,9 +2,54 @@ import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import {Link} from 'react-router-dom'
 
+import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
+import db from '../Utils/firebaseConfig';
+
 
 const Cart = () => {
     const cartwidget = useContext (CartContext);
+
+    const newOrder = () => {
+        let datosCompra = cartwidget.cartList.map(item=>({
+            id: item.id,
+            title: item.name,
+            price: item.cost,
+            quantity: item.quantityItem
+        }
+        )) 
+
+        cartwidget.cartList.forEach(async (item) => {
+            const itemRef = doc(db, "products", item.id);
+            await updateDoc(itemRef, {
+                stock: increment(-item.quantityItem)
+            });
+            });
+
+        let order = {
+            buyer: {
+                name: "Matias Coronel",
+                phone: "12345678",
+                email: "123456789@hotmail.com"
+            },
+            
+            date: serverTimestamp(),
+            Total:cartwidget.totalPrice(),
+            items: datosCompra
+        };
+        console.log (order);
+        const createOrderFirestore = async () => {
+            const newOrderRef = doc (collection(db, "orders"));
+            await setDoc(newOrderRef, order);
+            return newOrderRef;
+        }
+
+        createOrderFirestore()
+            .then(res => alert("tu Id de la orden es " + res.id))
+            .catch(err => console.log(err))
+
+            cartwidget.clear();
+
+    }
 
     return (
     <>
@@ -43,7 +88,7 @@ const Cart = () => {
                     <h5 className="card-title">Total de articulos: {cartwidget.totalQuantityItems()}</h5>
                     <div>Importe total: $ {cartwidget.totalPrice()}</div>
                     
-                    <button className="btn btn-outline-dark p-3 m-5">Terminar mi compra</button>
+                    <button className="btn btn-outline-dark p-3 m-5" onClick={newOrder} >Confirmar mi compra</button>
                     
                     
                 </div>

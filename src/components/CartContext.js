@@ -52,22 +52,24 @@ const CartContextProvider = ({children}) => {
 
     const totalPrice = () => {
         let subtotal = cartList.map(item => totalPriceItem(item.id));
-        return  <>        
-        {
-            subtotal=null?
-            <div></div>
-        :<>
-        {subtotal.reduce(((previousValue, currentValue) => previousValue + currentValue),null)}
-        </>
-        }
-        </>
+        return   subtotal.reduce((previousValue, currentValue) => previousValue + currentValue)     
+        // {
+        //     subtotal=null?
+        //     <div></div>
+        // :<>
+        // {subtotal.reduce(((previousValue, currentValue) => previousValue + currentValue),null)}
+        // </>
+        // }
+        // </>
     }
 
     
-    
+    const calcTotal = () => {
+        return totalPrice();
+    }
 
     return (
-        <CartContext.Provider value={{cartList, addItem, clear, removeItem, totalQuantityItems, totalPriceItem, totalPrice}}>
+        <CartContext.Provider value={{cartList, addItem, clear, removeItem, totalQuantityItems, totalPriceItem, totalPrice, calcTotal}}>
             {children}
         </CartContext.Provider>
     );
