@@ -12,11 +12,11 @@ const Navbar = () => {
                 </div>
                 <div>
                     <ul className="navbar_navegador">
-                        <li><Link className='navbar_navegador__item' to='/category/1'>Funkos Pop</Link> </li>
-                        <li><Link className='navbar_navegador__item' to='/category/2'>Remeras</Link> </li>
-                        <li><Link className='navbar_navegador__item' to='/category/4'>Tazas</Link> </li>
-                        <li><Link className='navbar_navegador__item' to='/category/5'>Cuadros</Link> </li>
-                        <li><Link className='navbar_navegador__item' to='/category/6'>Miscelaneos</Link> </li>
+                        <li><Link className='navbar_navegador__item' to='/category/funko'>Funkos Pop</Link> </li>
+                        <li><Link className='navbar_navegador__item' to='/category/remera'>Remeras</Link> </li>
+                        <li><Link className='navbar_navegador__item' to='/category/taza'>Tazas</Link> </li>
+                        <li><Link className='navbar_navegador__item' to='/category/cuadro'>Cuadros</Link> </li>
+                        <li><Link className='navbar_navegador__item' to='/category/miscelaneo'>Miscelaneos</Link> </li>
                     </ul>
                 </div>
                 <div className='cartWidget'>

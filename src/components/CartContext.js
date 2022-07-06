@@ -53,14 +53,7 @@ const CartContextProvider = ({children}) => {
     const totalPrice = () => {
         let subtotal = cartList.map(item => totalPriceItem(item.id));
         return   subtotal.reduce((previousValue, currentValue) => previousValue + currentValue)     
-        // {
-        //     subtotal=null?
-        //     <div></div>
-        // :<>
-        // {subtotal.reduce(((previousValue, currentValue) => previousValue + currentValue),null)}
-        // </>
-        // }
-        // </>
+        
     }
 
     

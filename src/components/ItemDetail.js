@@ -11,7 +11,6 @@ const ItemDetail = ({item}) => {
     const onAdd = (quantity) => {
 
         setItemCount(quantity);
-        // console.log(qty);
         cartwidget.addItem(item, quantity);
     }
 
@@ -21,7 +20,7 @@ const ItemDetail = ({item}) => {
         {
             item.image
             ? 
-            <div className="container p-5 text-center">
+            <div className="p-5 text-center main">
                 <h3 >{item.name}</h3>
                 <div className="row align-items-center">
                     <div className="col-6 p-3"><img src={item.image} alt="imagen"></img> </div>

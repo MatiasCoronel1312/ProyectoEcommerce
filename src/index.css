@@ -10,6 +10,7 @@ body {
   box-sizing: border-box;    
   text-decoration: none; 
   list-style-type: none; 
+  
 }
 
 code {
@@ -62,6 +63,23 @@ h1 {
   color: rgb(0, 0, 0);
   font-size: 2.5rem;
   text-align: center;
-  padding-top:5.5rem ;
-  margin: 1rem;
+  padding-top:6.5rem ;
+  background-color: rgb(168, 165, 165)
+}
+
+.main {
+  background-color: rgb(135, 134, 134);
+}
+#nombreCuadro{
+  padding: 1rem;
+}
+#apellidoeCuadro{
+  padding: 1rem;
+}
+#emailCuadro{
+  padding: 1rem;
+}
+
+.completarDatos{
+  color: rgb(247, 3, 3);
 }

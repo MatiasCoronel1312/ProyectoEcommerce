@@ -3,7 +3,7 @@ import Item from './Item'
 
 const ItemList = ({items}) => {
     return (
-        <div className='d-flex flex-wrap justify-content-between p-3'>
+        <div className='d-flex flex-wrap justify-content-between p-3 main'>
             {
                 items.length > 0
                 ? items.map(item => <Item id ={item.id} key={item.id} title={item.name} price={item.cost} pictureUrl={item.image} stock={item.stock}  />) 
